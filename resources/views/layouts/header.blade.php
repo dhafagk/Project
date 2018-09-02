@@ -105,13 +105,17 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
             </li>
           </ul>
         </li>
-        <li class=" nav-item"><a href="/reservation"><i class="la la-ticket"></i><span class="menu-title" data-i18n="nav.table_jsgrid.main">Reservation</span></a>
-        </li>
-        <li class=" nav-item"><a href="/rute"><i class="la la-map"></i><span class="menu-title" data-i18n="nav.table_jsgrid.main">Rute</span></a>
-        </li>
-        <li class=" nav-item"><a href="/trans"><i class="la la-automobile"></i><span class="menu-title" data-i18n="nav.table_jsgrid.main">Transportation</span></a>
-        </li>
-        <li class=" nav-item"><a href="/transtype"><i class="la la-cab"></i><span class="menu-title" data-i18n="nav.table_jsgrid.main">Transportation Type</span></a>
+        <li class="nav-item"><a href="/sbujk"><i class="la la-users"></i><span>SBU Jasa Konstruksi (SBU JK)</span></a>
+          <ul class="menu-content">
+            <li><a class="menu-item" href="/sbujknew" data-i18n="nav.data_tables.dt_basic_initialization">SBU JK Baru</a>
+            </li>
+            <li><a class="menu-item" href="dt-advanced-initialization.html" data-i18n="nav.data_tables.dt_advanced_initialization">Registrasi SBU JK</a>
+            </li>
+            <li><a class="menu-item" href="dt-styling.html" data-i18n="nav.data_tables.dt_styling">Perpanjangan SBU JK</a>
+            </li>
+            <li><a class="menu-item" href="dt-styling.html" data-i18n="nav.data_tables.dt_styling">Perubahan Klasifikasi SBU JK</a>
+            </li>
+          </ul>
         </li>
         </ul>
     </div>

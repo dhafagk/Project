@@ -19,6 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('kta','ktaController');
+Route::get('get_pdf', [ 'as' => 'rekap.download', 'uses' => 'RekapController@download']);
+// Route::get('rekap/{tanggal}/pdf', ['as' => 'rekap.pdf', 'uses' => 'RekapController@getPdf']);
+// Route::get('rekap/{tanggal}', ['as' => 'rekap.show', 'uses' => 'RekapController@show']);
+Route::get('rekap', 'RekapController@index');
+Route::get('get_excel', [ 'as' => 'exports/kta', 'uses' => 'ktaController@export']);
 
+Route::resource('kta','ktaController');
 Route::resource('ktanew','ktanewController');
+
+Route::resource('sbujk','sbujkController');
+Route::resource('sbujknew','sbujknewController');

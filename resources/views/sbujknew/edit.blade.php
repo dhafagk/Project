@@ -4,7 +4,7 @@
     <div class="content-wrapper">
       <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
-          <h3 class="content-header-title">Edit Customer</h3>
+          <h3 class="content-header-title">editnew Customer</h3>
           <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
               <ol class="breadcrumb">
@@ -12,7 +12,7 @@
                 </li>
                 <li class="breadcrumb-item"><a href="/customer">Customer</a>
                 </li>
-                <li class="breadcrumb-item active">Edit Customer
+                <li class="breadcrumb-item active">editnew Customer
                 </li>
               </ol>
             </div>
@@ -27,7 +27,7 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title" id="basic-layout-card-center">Edit Data</h4>
+                  <h4 class="card-title" id="basic-layout-card-center">editnew Data</h4>
                   <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -40,22 +40,22 @@
                 <div class="card-content collapse show">
                   <div class="card-body">
 
-                    <form action="/kta/{{$edit->id}}" method="post" class="form">
-                        {{csrf_field()}}
-                        <input type="hidden" name="_method" value="put">
+                    <form action="/sbujknew/{{$editnew->id}}" method="post" class="form">
+                    	{{csrf_field()}}
+                    	<input type="hidden" name="_method" value="put">
                       <div class="form-body">
 
                         <div class="form-group{{ $errors->has('npwp') ? ' has-error' : '' }}">
                           <label for="issueinput1">No. NPWP</label>
 
                           <input type="text" id="issueinput1" readonly="readonly" class="form-control" 
-                          name="npwp" value="{{$edit->npwp}}" >
+                          name="npwp" value="{{$editnew->npwp}}" >
 
                           @if ($errors->has('npwp'))
-                          <span class="help-block">
-                            <strong>{{ $errors->first('npwp') }}</strong>
-                          </span>
-                          @endif
+				          <span class="help-block">
+				            <strong>{{ $errors->first('npwp') }}</strong>
+				          </span>
+				          @endif
 
                         </div>
 
@@ -63,26 +63,26 @@
                           <label for="issueinput1">Nama Badan Usaha</label>
 
                           <input type="text" id="issueinput1" readonly="readonly" class="form-control"
-                          name="nama_bu" value="{{$edit->nama_bu}}" >
+                          name="nama_bu" value="{{$editnew->nama_bu}}" >
 
                           @if ($errors->has('nama_bu'))
-                          <span class="help-block">
-                            <strong>{{ $errors->first('nama_bu') }}</strong>
-                          </span>
-                          @endif
+				          <span class="help-block">
+				            <strong>{{ $errors->first('nama_bu') }}</strong>
+				          </span>
+				          @endif
 
                         </div>
 
                         <div class="form-group{{ $errors->has('domisili') ? ' has-error' : '' }}">
                           <label for="issueinput1">Kabupaten/Kota</label>
 
-                          <input type="text" id="issueinput1" readonly="readonly" class="form-control"  name="domisili" value="{{$edit->domisili}}" >
+                          <input type="text" id="issueinput1" readonly="readonly" class="form-control"  name="domisili" value="{{$editnew->domisili}}" >
 
                           @if ($errors->has('domisili'))
-                          <span class="help-block">
-                            <strong>{{ $errors->first('domisili') }}</strong>
-                          </span>
-                          @endif
+				          <span class="help-block">
+				            <strong>{{ $errors->first('domisili') }}</strong>
+				          </span>
+				          @endif
 
                         </div>
 
@@ -93,60 +93,110 @@
                           <li class="mb-1">
                             <div class="row">
                               <div class="col-sm-6 col-12">
-                                <span class="block">A1</span>
+                                <span class="block">B1</span>
                               </div>
                               <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a1" value="{{$edit->a1}}">
-                              </div>
-                            </div>
-                          </li>
-                          <li class="mb-1">
-                            <div class="row">
-                              <div class="col-sm-6 col-12">
-                                <span class="block">A2</span>
-                              </div>
-                              <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a2" value="{{$edit->a2}}">
+                                <input type="date" class="form-control" id="date" name="b1" value="{{$editnew->b1}}">
                               </div>
                             </div>
                           </li>
                           <li class="mb-1">
                             <div class="row">
                               <div class="col-sm-6 col-12">
-                                <span class="block">A3</span>
+                                <span class="block">B2</span>
                               </div>
                               <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a3" value="{{$edit->a3}}">
-                              </div>
-                            </div>
-                          </li>
-                          <li class="mb-1">
-                            <div class="row">
-                              <div class="col-sm-6 col-12">
-                                <span class="block">A4</span>
-                              </div>
-                              <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a4" value="{{$edit->a4}}">
+                                <input type="date" class="form-control" id="date" name="b2" value="{{$editnew->b2}}">
                               </div>
                             </div>
                           </li>
                           <li class="mb-1">
                             <div class="row">
                               <div class="col-sm-6 col-12">
-                                <span class="block">A5</span>
+                                <span class="block">B3</span>
                               </div>
                               <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a5" value="{{$edit->a5}}">
+                                <input type="date" class="form-control" id="date" name="b3" value="{{$editnew->b3}}">
                               </div>
                             </div>
                           </li>
                           <li class="mb-1">
                             <div class="row">
                               <div class="col-sm-6 col-12">
-                                <span class="block">A6</span>
+                                <span class="block">B4</span>
                               </div>
                               <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a6" value="{{$edit->a6}}">
+                                <input type="date" class="form-control" id="date" name="b4" value="{{$editnew->b4}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B5</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b5" value="{{$editnew->b5}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B6</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b6" value="{{$editnew->b6}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B7</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b7" value="{{$editnew->b7}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B8</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b8" value="{{$editnew->b8}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B9</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b9" value="{{$editnew->b9}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B10</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b10" value="{{$editnew->b10}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B11</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b11" value="{{$editnew->b11}}">
                               </div>
                             </div>
                           </li>
@@ -170,7 +220,7 @@
                           <i class="la la-check-square-o"></i> Save
                         </button>
                         <input type="hidden" value="{{ csrf_token() }}" name="_token">
-                        <input type="hidden" value="put" name="_method">
+    					<input type="hidden" value="put" name="_method">
                       </div>
                     </form>
                   </div>

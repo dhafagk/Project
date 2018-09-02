@@ -3,36 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\KTA;
-use App\Exports\KTAExport;
-use Maatwebsite\Excel\Facades\Excel;
+use App\SBUJK;
 
-class ktaController extends Controller
+class sbujkController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function __construct()
      {
          $this->middleware('auth');
      }
-
     public function index()
     {
-        $kta = KTA::all()->sortByDesc('id');
-        return view('kta.index')->with('kta', $kta);
-    }
-
-    public function export() 
-    {
-
-        $kta = KTA::all()->sortByDesc('id');
-
-        $excel = Excel::loadView('exports.kta', ['kta' => $kta]);
-        return $excel::download(new KTAExport, 'kta.xlsx');
+        $sbujk = SBUJK::all()->sortByDesc('id');
+        return view('sbujk.index')->with('sbujk', $sbujk);
     }
 
     /**
@@ -42,7 +29,7 @@ class ktaController extends Controller
      */
     public function create()
     {
-         return view('kta.create');
+        return view('sbujk.create');
     }
 
     /**
@@ -53,7 +40,7 @@ class ktaController extends Controller
      */
     public function store(Request $request)
     {
-
+        
         $this->validate($request ,[
           'npwp' => 'required',
           'nama_bu' => 'required',
@@ -63,23 +50,28 @@ class ktaController extends Controller
           'nohp' => 'required',
         ]);
 
-        $storage = new KTA();
+        $storage = new SBUJK();
         $storage->npwp = $request->npwp;
         $storage->nama_bu = $request->nama_bu;
         $storage->nama_pemohon = $request->nama_pemohon;
         $storage->domisili = $request->domisili;
         $storage->email = $request->email;
         $storage->nohp = $request->nohp;
-        $storage->a1 = $request->a1;
-        $storage->a2 = $request->a2;
-        $storage->a3 = $request->a3;
-        $storage->a4 = $request->a4;
-        $storage->a5 = $request->a5;
-        $storage->a6 = $request->a6;
+        $storage->b1 = $request->b1;
+        $storage->b2 = $request->b2;
+        $storage->b3 = $request->b3;
+        $storage->b4 = $request->b4;
+        $storage->b5 = $request->b5;
+        $storage->b6 = $request->b6;
+        $storage->b7 = $request->b7;
+        $storage->b8 = $request->b8;
+        $storage->b9 = $request->b9;
+        $storage->b10 = $request->b10;
+        $storage->b11 = $request->b11;
         $storage->jenis = $request->jenis;
         $storage->save();
 
-        return redirect('kta');
+        return redirect('sbujk');
     }
 
     /**
@@ -101,12 +93,11 @@ class ktaController extends Controller
      */
     public function edit($id)
     {
-
-        $edit = KTA::find($id);
+        $edit = SBUJK::find($id);
         if(!$edit){
         abort(404);
         }        
-        return view('kta.edit')->with('edit', $edit);
+        return view('sbujk.edit')->with('edit', $edit);
     }
 
     /**
@@ -118,21 +109,25 @@ class ktaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $storage = KTA::find($id);
+        $storage = SBUJK::find($id);
         $storage->npwp = $request->npwp;
         $storage->nama_bu = $request->nama_bu;
         $storage->domisili = $request->domisili;
-        $storage->a1 = $request->a1;
-        $storage->a2 = $request->a2;
-        $storage->a3 = $request->a3;
-        $storage->a4 = $request->a4;
-        $storage->a5 = $request->a5;
-        $storage->a6 = $request->a6;
+        $storage->b1 = $request->b1;
+        $storage->b2 = $request->b2;
+        $storage->b3 = $request->b3;
+        $storage->b4 = $request->b4;
+        $storage->b5 = $request->b5;
+        $storage->b6 = $request->b6;
+        $storage->b7 = $request->b7;
+        $storage->b8 = $request->b8;
+        $storage->b9 = $request->b9;
+        $storage->b10 = $request->b10;
+        $storage->b11 = $request->b11;
         $storage->catatan = $request->catatan;
         $storage->save();
 
-        return redirect('kta');
-        
+        return redirect('sbujk');
     }
 
     /**

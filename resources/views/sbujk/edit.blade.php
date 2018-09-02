@@ -40,7 +40,7 @@
                 <div class="card-content collapse show">
                   <div class="card-body">
 
-                    <form action="/kta/{{$edit->id}}" method="post" class="form">
+                    <form action="/sbujk/{{$edit->id}}" method="post" class="form">
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="put">
                       <div class="form-body">
@@ -93,60 +93,110 @@
                           <li class="mb-1">
                             <div class="row">
                               <div class="col-sm-6 col-12">
-                                <span class="block">A1</span>
+                                <span class="block">B1</span>
                               </div>
                               <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a1" value="{{$edit->a1}}">
-                              </div>
-                            </div>
-                          </li>
-                          <li class="mb-1">
-                            <div class="row">
-                              <div class="col-sm-6 col-12">
-                                <span class="block">A2</span>
-                              </div>
-                              <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a2" value="{{$edit->a2}}">
+                                <input type="date" class="form-control" id="date" name="b1" value="{{$edit->b1}}">
                               </div>
                             </div>
                           </li>
                           <li class="mb-1">
                             <div class="row">
                               <div class="col-sm-6 col-12">
-                                <span class="block">A3</span>
+                                <span class="block">B2</span>
                               </div>
                               <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a3" value="{{$edit->a3}}">
-                              </div>
-                            </div>
-                          </li>
-                          <li class="mb-1">
-                            <div class="row">
-                              <div class="col-sm-6 col-12">
-                                <span class="block">A4</span>
-                              </div>
-                              <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a4" value="{{$edit->a4}}">
+                                <input type="date" class="form-control" id="date" name="b2" value="{{$edit->b2}}">
                               </div>
                             </div>
                           </li>
                           <li class="mb-1">
                             <div class="row">
                               <div class="col-sm-6 col-12">
-                                <span class="block">A5</span>
+                                <span class="block">B3</span>
                               </div>
                               <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a5" value="{{$edit->a5}}">
+                                <input type="date" class="form-control" id="date" name="b3" value="{{$edit->b3}}">
                               </div>
                             </div>
                           </li>
                           <li class="mb-1">
                             <div class="row">
                               <div class="col-sm-6 col-12">
-                                <span class="block">A6</span>
+                                <span class="block">B4</span>
                               </div>
                               <div class="col-sm-6 col-12">
-                                <input type="date" class="form-control" id="date" name="a6" value="{{$edit->a6}}">
+                                <input type="date" class="form-control" id="date" name="b4" value="{{$edit->b4}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B5</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b5" value="{{$edit->b5}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B6</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b6" value="{{$edit->b6}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B7</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b7" value="{{$edit->b7}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B8</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b8" value="{{$edit->b8}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B9</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b9" value="{{$edit->b9}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B10</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b10" value="{{$edit->b10}}">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <span class="block">B11</span>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <input type="date" class="form-control" id="date" name="b11" value="{{$edit->b11}}">
                               </div>
                             </div>
                           </li>

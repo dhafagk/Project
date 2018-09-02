@@ -54,36 +54,44 @@
                             <th>No</th>
                           <th>Nama Badan Usaha</th>
                           <th>Kabupaten/Kota</th>
-                          <th>a1</th>
-                          <th>a2</th>
-                          <th>a3</th>
-                          <th>a4</th>
-                          <th>a5</th>
-                          <th>a6</th>
+                          <th>B1</th>
+                          <th>B2</th>
+                          <th>B3</th>
+                          <th>B4</th>
+                          <th>B5</th>
+                          <th>B6</th>
+                          <th>B7</th>
+                          <th>B8</th>
+                          <th>B9</th>
+                          <th>B10</th>
+                          <th>B11</th>
                           <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach($kta as $data)
+                          @foreach($sbujk as $data)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
                           <td>{{$data->nama_bu}}</td>
                           <td>{{$data->domisili}}</td>
-                          <td>{{$data->a1}}</td>
-                          <td>{{$data->a2}}</td>
-                          <td>{{$data->a3}}</td>
-                          <td>{{$data->a4}}</td>
-                          <td>{{$data->a5}}</td>
-                          <td>{{$data->a6}}</td>
+                          <td>{{$data->b1}}</td>
+                          <td>{{$data->b2}}</td>
+                          <td>{{$data->b3}}</td>
+                          <td>{{$data->b4}}</td>
+                          <td>{{$data->b5}}</td>
+                          <td>{{$data->b6}}</td>
+                          <td>{{$data->b7}}</td>
+                          <td>{{$data->b8}}</td>
+                          <td>{{$data->b9}}</td>
+                          <td>{{$data->b10}}</td>
+                          <td>{{$data->b11}}</td>
                           <td>
                           	<div class="btn-group">
-                            <button type="button" class="btn btn-info mr-1 mb-1"><a href="/kta/{{$data->id}}/edit">Action</a></button>
+                            <button type="button" class="btn btn-info mr-1 mb-1"><a href="/sbujk/{{$data->id}}/edit">Action</a></button>
                           </div></td>
                         </tr>
                         @endforeach
                       </table>
-                      <a href="{{ url('rekap') }}" class="btn btn-success"><i class="fa fa-book"></i> Rekap PDF</a>
-                      <a href="/get_excel" class="btn btn-success"><i class="fa fa-book"></i> Rekap Excel</a>
                   </div>
                 </div>
               </div>

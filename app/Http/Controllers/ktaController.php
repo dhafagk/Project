@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\KTA;
-use App\Exports\KTAExport;
-use Maatwebsite\Excel\Facades\Excel;
+use DB;
 
 class ktaController extends Controller
 {
@@ -22,17 +21,31 @@ class ktaController extends Controller
 
     public function index()
     {
-        $kta = KTA::all()->sortByDesc('id');
-        return view('kta.index')->with('kta', $kta);
-    }
+        // $duplicate = DB::table('kta')->select('npwp')->distinct()->get();
+        $kta = DB::table('kta')->groupBy('npwp')->get()->sortByDesc('id');
+        // $kta = KTA::all()->sortByDesc('id');
+        return view('kta.index')->with('kta', $kta);//->with('dd', $duplicate);
 
-    public function export() 
-    {
+        // $slss = DB::table('kta')->select('SELECT npwp FROM kta UNION ALL SELECT nama_bu FROM KTA UNION ALL SELECT domisili FROM kta');
+        // return view('kta.index')->with('kta', $slss);
 
-        $kta = KTA::all()->sortByDesc('id');
+    //     $duplicates = DB::table('kta')
+    // ->select('npwp','nama_bu','nama_pemohon','domisili','email','nohp', DB::raw('COUNT(*) as `count`')
+    // ->groupBy('npwp','nama_bu','nama_pemohon','domisili','email','nohp')
+    // ->havingRaw('count', '>', 1)
+    // ->get();
 
-        $excel = Excel::loadView('exports.kta', ['kta' => $kta]);
-        return $excel::download(new KTAExport, 'kta.xlsx');
+    // return view('kta.index')->with('dd', $duplicates);
+
+        // $nb = DB::table('kta')->select("nama_bu");
+        // $dm = DB::table('kta')->select("domisili");
+        // $ssa = DB::table('kta')->select('npwp')->distinct()->unionAll($nb)->unionAll($dm)->get();
+        // return view('kta.index')->with('kta', $ssa);
+
+        // SELECT DISTINCT npwp FROM ( SELECT npwp FROM kta UNION ALL SELECT nama_bu FROM kta UNION ALL SELECT domisili FROM kta ) AS x
+
+
+
     }
 
     /**

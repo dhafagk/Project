@@ -48,42 +48,32 @@
                 </div>
                 <div class="card-content collapse show">
                   <div class="card-body card-dashboard">
-                      <table class="table display nowrap table-striped table-bordered scroll-horizontal">
+                      <table class="table table-striped table-bordered zero-configuration">
                         <thead>
                           <tr>
                             <th>No</th>
+                            <th>No. NPWP</th>
                           <th>Nama Badan Usaha</th>
                           <th>Kabupaten/Kota</th>
-                          <th>a1</th>
-                          <th>a2</th>
-                          <th>a3</th>
-                          <th>a4</th>
-                          <th>a5</th>
-                          <th>a6</th>
                           <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach($kta as $data)
+                          @foreach($ktachange as $data)
+                          @if($data->jenis == "c")
                         <tr>
                           <td>{{ $loop->iteration }}</td>
+                          <td>{{$data->npwp}}</td>
                           <td>{{$data->nama_bu}}</td>
                           <td>{{$data->domisili}}</td>
-                          <td>{{$data->a1}}</td>
-                          <td>{{$data->a2}}</td>
-                          <td>{{$data->a3}}</td>
-                          <td>{{$data->a4}}</td>
-                          <td>{{$data->a5}}</td>
-                          <td>{{$data->a6}}</td>
                           <td>
                           	<div class="btn-group">
-                            <button type="button" class="btn btn-info mr-1 mb-1"><a href="/kta/{{$data->id}}/edit">Action</a></button>
+                            <button type="button" class="btn btn-info mr-1 mb-1"><a href="/ktachange/{{$data->id}}/edit">Action</a></button>
                           </div></td>
                         </tr>
+                        @else @endif
                         @endforeach
                       </table>
-                      <a href="{{ url('rekap') }}" class="btn btn-success"><i class="fa fa-book"></i> Rekap PDF</a>
-                      <a href="/excel_kta" class="btn btn-success"><i class="fa fa-book"></i> Rekap Excel</a>
                   </div>
                 </div>
               </div>

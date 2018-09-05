@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\KTA;
 
-class ktanewController extends Controller
+class ktachangeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +17,10 @@ class ktanewController extends Controller
      {
          $this->middleware('auth');
      }
-
     public function index()
     {
-        $ktanew = DB::table('kta')->groupBy('npwp')->get()->sortByDesc('id');
-        return view('ktanew.index')->with('ktanew', $ktanew);
+        $ktachange = DB::table('kta')->groupBy('npwp')->get()->sortByDesc('id');
+        return view('ktachange.index')->with('ktachange', $ktachange);
     }
 
     /**
@@ -31,7 +30,7 @@ class ktanewController extends Controller
      */
     public function create()
     {
-        return view('ktanew.create');
+        //
     }
 
     /**
@@ -42,32 +41,7 @@ class ktanewController extends Controller
      */
     public function store(Request $request)
     {
-         $this->validate($request ,[
-          'npwp' => 'required',
-          'nama_bu' => 'required',
-          'nama_pemohon' => 'required',
-          'domisili' => 'required',
-          'email' => 'required',
-          'nohp' => 'required',
-        ]);
-
-        $storage = new KTA();
-        $storage->npwp = $request->npwp;
-        $storage->nama_bu = $request->nama_bu;
-        $storage->nama_pemohon = $request->nama_pemohon;
-        $storage->domisili = $request->domisili;
-        $storage->email = $request->email;
-        $storage->nohp = $request->nohp;
-        $storage->a1 = $request->a1;
-        $storage->a2 = $request->a2;
-        $storage->a3 = $request->a3;
-        $storage->a4 = $request->a4;
-        $storage->a5 = $request->a5;
-        $storage->a6 = $request->a6;
-        $storage->jenis = $request->jenis;
-        $storage->save();
-
-        return redirect('ktanew');
+        //
     }
 
     /**
@@ -89,11 +63,11 @@ class ktanewController extends Controller
      */
     public function edit($id)
     {
-        $editnew = KTA::find($id);
-        if(!$editnew){
+        $editchange = KTA::find($id);
+        if(!$editchange){
         abort(404);
         }        
-        return view('ktanew.edit')->with('editnew', $editnew);
+        return view('ktachange.edit')->with('editchange', $editchange);
     }
 
     /**
@@ -105,21 +79,16 @@ class ktanewController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $storage = KTA::find($id);
         $storage->npwp = $request->npwp;
         $storage->nama_bu = $request->nama_bu;
+        $storage->nama_pemohon = $request->nama_pemohon;
         $storage->domisili = $request->domisili;
-        $storage->a1 = $request->a1;
-        $storage->a2 = $request->a2;
-        $storage->a3 = $request->a3;
-        $storage->a4 = $request->a4;
-        $storage->a5 = $request->a5;
-        $storage->a6 = $request->a6;
-        $storage->catatan = $request->catatan;
+        $storage->email = $request->email;
+        $storage->nohp = $request->nohp;
         $storage->save();
 
-        return redirect('ktanew');
+        return redirect('ktachange');
     }
 
     /**

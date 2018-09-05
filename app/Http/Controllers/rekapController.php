@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\KTA;
 use PDF;
+use DB;
 
 class rekapController extends Controller
 {
@@ -23,14 +24,13 @@ class rekapController extends Controller
         //             ->get();
         // return view('rekap.pdf')->with('data', $absen)->with($tanggal);
 
-        $kta = KTA::all()->sortByDesc('id');
+        $kta = DB::table('kta')->groupBy('npwp')->get()->sortByDesc('id');
         return view('rekap.index')->with('kta', $kta);
     }
 
     public function download()
     {
-        $kta = KTA::all()->sortByDesc('id');
-
+        $kta = DB::table('kta')->groupBy('npwp')->get()->sortByDesc('id');
         $pdf = PDF::loadView('rekap.download', ['kta' => $kta]);
         return $pdf->download('rekap-data.pdf');
     }

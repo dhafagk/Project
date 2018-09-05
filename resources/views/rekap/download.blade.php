@@ -40,7 +40,7 @@
 			<tbody>
 				@foreach($kta as $index => $value)
 					<tr style="page-break-after: always;">
-						<td>{{ $index+1 }}</td>
+						<td>{{ $loop->iteration }}</td>
 						<td>{{ $value->nama_bu }}</td>
 						<td>{{$value->domisili}}</td>
 						<td>{{ $value->a1 }}</td>
